@@ -1,0 +1,12 @@
+.section {
+  background: var(--indigo-night);
+}
+.head {
+  max-width: none;
+  margin-bottom: 16px;
+}
+.sub {
+  max-width: none;
+  font-size: 1.05rem;
+  color: #cdd8ef;
+}

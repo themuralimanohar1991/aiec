@@ -1,0 +1,33 @@
+.wrap {
+  position: relative;
+}
+
+.statement {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3.6vw, 2.9rem);
+  line-height: 1.28;
+  font-weight: 500;
+  color: var(--blue-deep);
+  max-width: none;
+}
+
+@media (min-width: 768px) {
+  .statement {
+    max-width: none;
+  }
+}
+
+/* second statement overlays the first while pinned (desktop swap) */
+.second {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* on mobile / reduced motion the second statement stacks below */
+@media (max-width: 1023px) {
+  .second {
+    position: static;
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,25 @@
+.viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.track {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  will-change: transform;
+}
+
+/* reduced motion: allow manual horizontal scroll instead of auto-drift */
+.trackStatic {
+  overflow-x: auto;
+  width: 100%;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 8px;
+}
+
+.dupe {
+  display: flex;
+  gap: 18px;
+  margin-left: 18px;
+}

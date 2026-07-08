@@ -1,0 +1,58 @@
+.scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 22, 58, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 65;
+}
+.scrimOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.panel {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(82vw, 340px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  background: var(--white);
+  padding: 92px 32px 32px;
+  transform: translateX(100%);
+  transition: transform 0.32s ease;
+  border-left: 1px solid var(--line);
+  box-shadow: -12px 0 40px rgba(20, 22, 58, 0.1);
+  z-index: 66;
+}
+.panelOpen {
+  transform: translateX(0);
+}
+
+.panel a {
+  font-size: 18px;
+  padding: 12px 0;
+  width: 100%;
+  color: var(--ink);
+  font-weight: 500;
+}
+.panel a:hover {
+  color: var(--blue);
+}
+
+.cta {
+  margin-top: 14px;
+  color: var(--blue) !important;
+  font-weight: 600 !important;
+}
+
+/* only present on small screens; hidden on desktop */
+@media (min-width: 941px) {
+  .panel,
+  .scrim {
+    display: none;
+  }
+}

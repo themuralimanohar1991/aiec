@@ -1,0 +1,112 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: transparent;
+  transition:
+    background 0.3s,
+    border-color 0.3s,
+    box-shadow 0.3s;
+  border-bottom: 1px solid transparent;
+}
+
+/* solid state after scrolling past the hero */
+.solid {
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(12px) saturate(1.2);
+  border-bottom-color: var(--line);
+  box-shadow: 0 6px 24px rgba(20, 22, 58, 0.05);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  height: clamp(38px, 4.4vw, 48px);
+  width: auto;
+  display: block;
+}
+
+.links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.links a {
+  font-size: 14.5px;
+  color: var(--ink);
+  font-weight: 500;
+  padding: 6px 0;
+  transition: color 0.2s;
+}
+.links a:hover {
+  color: var(--blue);
+}
+
+.cta {
+  background: var(--blue);
+  color: #fff !important;
+  padding: 9px 18px !important;
+  border-radius: 10px;
+  font-size: 13.5px !important;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(36, 71, 217, 0.22);
+  transition: background 0.2s;
+}
+.cta:hover {
+  background: var(--blue-deep);
+}
+
+/* light-on-dark context switch while over a dark section */
+/* the logo PNG has a white background (no transparency); give it a small
+   rounded white chip so it reads intentionally on dark bands instead of a
+   raw white rectangle. */
+.brand {
+  border-radius: 10px;
+  padding: 5px 9px;
+  transition: background 0.3s;
+}
+.onDark .brand {
+  background: #fff;
+}
+.onDark .links a {
+  color: #dbe3f7;
+}
+.onDark .links a:hover {
+  color: var(--cyan-bright);
+}
+.onDark.solid {
+  background: rgba(20, 22, 58, 0.7);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+.onDark .menuBtn {
+  color: #fff;
+}
+
+.menuBtn {
+  display: none;
+  background: none;
+  border: 0;
+  color: var(--blue-deep);
+  cursor: pointer;
+  padding: 8px;
+}
+
+@media (max-width: 940px) {
+  .links {
+    display: none;
+  }
+  .menuBtn {
+    display: block;
+    z-index: 70;
+  }
+}

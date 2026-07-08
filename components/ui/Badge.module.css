@@ -1,0 +1,39 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  line-height: 1.4;
+}
+
+.advisory {
+  background: var(--blue);
+  color: #fff;
+}
+.it {
+  background: var(--it-blue);
+  color: #fff;
+}
+.maintenance {
+  background: var(--cyan);
+  color: #04252a;
+}
+.operations {
+  background: var(--slate-green);
+  color: #fff;
+}
+.academic {
+  background: var(--amber);
+  color: #2a1c04;
+}

@@ -1,0 +1,15 @@
+.section {
+  background: var(--indigo-night);
+}
+.head {
+  margin: 12px 0 16px;
+}
+.body {
+  max-width: none;
+  font-size: 1.08rem;
+  color: #e2e9f7;
+  margin-bottom: 26px;
+}
+.cta {
+  display: inline-flex;
+}

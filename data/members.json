@@ -1,0 +1,17 @@
+[
+  { "id": "vagesh-dave", "name": "Vagesh Dave", "title": "GVP & CIO", "company": "McDermott International", "badges": ["advisory-council"], "headshot": "mentor-1.jpg" },
+  { "id": "anthony-dayao", "name": "Anthony Dayao", "title": "CIO", "company": "Motiva", "badges": ["advisory-council"], "headshot": "mentor-2.jpg" },
+  { "id": "david-cain", "name": "David Cain", "title": "VP & CIO", "company": "CVR Energy", "badges": ["advisory-council"], "headshot": "mentor-3.jpg" },
+  { "id": "kim-williams", "name": "Kim Williams", "title": "IT General Manager", "company": "Shell Energy", "badges": ["advisory-council"], "headshot": "mentor-4.jpg" },
+  { "id": "ajith-murthy", "name": "Ajith Murthy", "title": "Digital Transformation Leader", "company": "Shell", "badges": ["advisory-council"], "headshot": "mentor-5.jpg" },
+  { "id": "sindhu-menon", "name": "Sindhu Menon", "title": "Executive Director & CIO", "company": "Harris County, TX", "badges": ["advisory-council"], "headshot": "mentor-6.jpg" },
+  { "id": "sean-petersen", "name": "Sean Petersen", "title": "CIO", "company": "Murphy Oil Corp", "badges": ["advisory-council"], "headshot": "mentor-7.jpg" },
+  { "id": "david-harmon", "name": "David Harmon", "title": "CIO", "company": "Oil States International", "badges": ["advisory-council"], "headshot": "mentor-8.jpg" },
+  { "id": "richard-shepherd", "name": "Richard Shepherd", "title": "Managing Director, Digital Transformation", "company": "Proman", "badges": ["advisory-council"], "headshot": "mentor-9.jpg" },
+  { "id": "michael-dean", "name": "Michael Dean", "title": "SVP, CIO", "company": "ProEnergy Services", "badges": ["advisory-council"], "headshot": "mentor-1.jpg" },
+  { "id": "dominic-keller", "name": "Dominic Keller", "title": "VP, Information Technology", "company": "Transocean", "badges": ["advisory-council"], "headshot": "mentor-2.jpg" },
+  { "id": "maurice-tayeh", "name": "Maurice Tayeh", "title": "Global CIO", "company": "Hatch", "badges": ["advisory-council"], "headshot": "mentor-3.jpg" },
+  { "id": "chet-bhat", "name": "Chet Bhat", "title": "Global CIO", "company": "EnerMech", "badges": ["advisory-council"], "headshot": "mentor-4.jpg" },
+  { "id": "hani-elshahawi", "name": "Hani Elshahawi", "title": "Affiliation to be confirmed", "company": "Tech Evo System", "badges": ["advisory-council"], "headshot": "mentor-5.jpg" },
+  { "id": "sanjoy-paul", "name": "Sanjoy Paul", "title": "Executive Director", "company": "Rice Nexus", "badges": ["advisory-council", "academic-innovation"], "headshot": "mentor-6.jpg" }
+]

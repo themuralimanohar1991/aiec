@@ -1,0 +1,63 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: clamp(28px, 3vw, 40px);
+  height: 100%;
+  transition:
+    border-color 0.25s,
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+.card:hover {
+  border-color: var(--blue-soft);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 46px rgba(20, 22, 58, 0.1);
+}
+
+.tk {
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.tk::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+}
+.it .tk {
+  color: var(--it-blue);
+}
+.it .tk::before {
+  background: var(--it-blue);
+}
+.mr .tk {
+  color: var(--cyan);
+}
+.mr .tk::before {
+  background: var(--cyan);
+}
+.op .tk {
+  color: var(--slate-green);
+}
+.op .tk::before {
+  background: var(--slate-green);
+}
+
+.heading {
+  margin-top: 2px;
+}
+.copy {
+  font-size: 15px;
+  color: var(--muted);
+}

@@ -1,0 +1,31 @@
+.section {
+  background: var(--mist);
+  padding: clamp(48px, 6vw, 80px) 0;
+}
+
+.card {
+  background: var(--indigo-night);
+  border-radius: 24px;
+  padding: clamp(36px, 6vw, 72px);
+  max-width: 900px;
+  margin: 0 auto;
+  color: #dce3f5;
+}
+.card :global(.eyebrow) {
+  color: var(--cyan-bright);
+}
+
+.head {
+  margin: 14px 0 20px;
+  color: #fff;
+  max-width: none;
+}
+.head :global(*) {
+  color: #fff;
+}
+.body {
+  font-size: 1.08rem;
+  color: #c7d1ec;
+  max-width: none;
+  margin-bottom: 28px;
+}
