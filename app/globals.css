@@ -91,8 +91,13 @@ section{padding:clamp(40px,5vw,76px) 0}
 .btn-cyan:hover{background:var(--cyan-bright)}
 .btn-ghost{border-color:var(--blue);color:var(--blue);background:transparent}
 .btn-ghost:hover{border-color:var(--blue-deep);background:rgba(36,71,217,.06)}
-.on-navy .btn-ghost{border-color:rgba(255,255,255,.28);color:#fff}
-.on-navy .btn-ghost:hover{border-color:var(--cyan-bright);background:rgba(255,255,255,.06)}
+/* ghost buttons on ANY dark context (.on-navy class OR data-theme="dark"
+   full-bleed bands): the default blue border/text is too low-contrast on dark,
+   so switch to a light-on-dark treatment for WCAG-legible contrast. */
+.on-navy .btn-ghost,
+[data-theme="dark"] .btn-ghost{border-color:rgba(255,255,255,.5);color:#fff}
+.on-navy .btn-ghost:hover,
+[data-theme="dark"] .btn-ghost:hover{border-color:var(--cyan-bright);background:rgba(255,255,255,.08)}
 .btn .arr{transition:transform .2s}
 .btn:hover .arr{transform:translateX(4px)}
 

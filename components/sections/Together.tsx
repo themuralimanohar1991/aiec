@@ -25,7 +25,7 @@ export function Together() {
       <FullBleedReveal
         media={
           <Image
-            src="/img/env/community.jpg"
+            src="/img/aiec_community.webp"
             alt="The AiEC community convening at the Annual Summit"
             fill
             sizes="100vw"

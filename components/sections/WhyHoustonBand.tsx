@@ -1,21 +1,27 @@
+import Image from "next/image";
 import { FullBleedReveal } from "@/components/motion/FullBleedReveal";
 import { RevealText } from "@/components/motion/RevealText";
 import { FadeUp } from "@/components/motion/FadeUp";
 import { Button } from "@/components/ui/Button";
-import { PlaceholderMedia } from "@/components/ui/PlaceholderMedia";
 import styles from "./WhyHoustonBand.module.css";
 
 /**
- * §7 WHY HOUSTON — mapped onto Nixtio's full-bleed CTA-band. A Houston /
- * energy-infrastructure photo (client to supply) parallax-settles under a
- * darkening overlay; the headline + CTA rise into place (pattern M).
+ * §7 WHY HOUSTON - mapped onto Nixtio's full-bleed CTA-band. A Houston /
+ * energy-infrastructure photo parallax-settles under a darkening overlay;
+ * the headline + CTA rise into place (pattern M).
  */
 export function WhyHoustonBand() {
   return (
     <section className={styles.section} data-theme="dark">
       <FullBleedReveal
         media={
-          <PlaceholderMedia label="Houston skyline / energy photo - to supply" variant="cyan" />
+          <Image
+            src="/img/houston.webp"
+            alt="Houston energy infrastructure"
+            fill
+            sizes="100vw"
+            style={{ objectFit: "cover" }}
+          />
         }
       >
         <FadeUp as="span" className="eyebrow">

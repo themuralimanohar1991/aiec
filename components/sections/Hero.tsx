@@ -1,7 +1,7 @@
+import Image from "next/image";
 import { RevealText } from "@/components/motion/RevealText";
 import { FadeUp } from "@/components/motion/FadeUp";
 import { Button } from "@/components/ui/Button";
-import { PlaceholderMedia } from "@/components/ui/PlaceholderMedia";
 import styles from "./Hero.module.css";
 
 /**
@@ -50,7 +50,14 @@ export function Hero() {
         </div>
 
         <FadeUp className={styles.media} onLoad delay={0.3}>
-          <PlaceholderMedia label="Hero image - to supply" variant="navy" />
+          <Image
+            src="/img/hero_aiec.webp"
+            alt="Energy executives meeting with the Houston refinery skyline behind them"
+            fill
+            priority
+            sizes="(max-width:900px) 100vw, 48vw"
+            style={{ objectFit: "cover" }}
+          />
         </FadeUp>
       </div>
     </section>
