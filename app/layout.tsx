@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Spectral, Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import { SITE_URL } from "@/lib/site";
 import { SmoothScrollProvider } from "@/components/motion/SmoothScrollProvider";
 import { ScrollHeader } from "@/components/layout/ScrollHeader";
 import { Footer } from "@/components/layout/Footer";
@@ -25,13 +26,6 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500"],
   display: "swap",
 });
-
-/**
- * Canonical origin for absolute URLs (OG tags, canonicals). Set
- * NEXT_PUBLIC_SITE_URL in Vercel when the site moves to its real domain.
- */
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://aienergycouncil.vercel.app";
 
 export const metadata: Metadata = {
   // Inner pages set `title` and it renders as "About | AI Energy Council";

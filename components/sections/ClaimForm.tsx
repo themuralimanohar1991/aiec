@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { SITE_URL } from "@/lib/site";
 import styles from "./EOIForm.module.css";
 
 /**
@@ -14,7 +15,8 @@ import styles from "./EOIForm.module.css";
  */
 export function ClaimForm({ claimSlug }: { claimSlug?: string }) {
   const [sent, setSent] = useState(false);
-  const prefilledUrl = claimSlug ? `aienergycouncil.com/members/${claimSlug}` : "";
+  const host = SITE_URL.replace(/^https?:\/\//, "");
+  const prefilledUrl = claimSlug ? `${host}/members/${claimSlug}` : "";
 
   return (
     <>
@@ -46,7 +48,7 @@ export function ClaimForm({ claimSlug }: { claimSlug?: string }) {
             id="curl"
             type="text"
             defaultValue={prefilledUrl}
-            placeholder="aienergycouncil.com/members/your-name"
+            placeholder={`${host}/members/your-name`}
           />
         </div>
         <div className={styles.field}>

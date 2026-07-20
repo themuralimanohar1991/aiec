@@ -12,6 +12,6 @@
   { "id": "dominic-keller", "name": "Dominic Keller", "title": "VP, Information Technology", "company": "Transocean", "badges": ["advisory-council"], "headshot": "mentor-2.jpg" },
   { "id": "maurice-tayeh", "name": "Maurice Tayeh", "title": "Global CIO", "company": "Hatch", "badges": ["advisory-council"], "headshot": "mentor-3.jpg" },
   { "id": "chet-bhat", "name": "Chet Bhat", "title": "Global CIO", "company": "EnerMech", "badges": ["advisory-council"], "headshot": "mentor-4.jpg" },
-  { "id": "hani-elshahawi", "name": "Hani Elshahawi", "title": "Affiliation to be confirmed", "company": "Tech Evo System", "badges": ["advisory-council"], "headshot": "mentor-5.jpg" },
+  { "id": "hani-elshahawi", "name": "Hani Elshahawi", "title": "Energy Technology Leader", "company": "Tech Evo System", "badges": ["advisory-council"], "headshot": "mentor-5.jpg" },
   { "id": "sanjoy-paul", "name": "Sanjoy Paul", "title": "Executive Director", "company": "Rice Nexus", "badges": ["advisory-council", "academic-innovation"], "headshot": "mentor-6.jpg" }
 ]
