@@ -7,7 +7,6 @@ import { IfYou } from "@/components/sections/IfYou";
 import { WhyHoustonBand } from "@/components/sections/WhyHoustonBand";
 import { PublishedWork } from "@/components/sections/PublishedWork";
 import { Together } from "@/components/sections/Together";
-import { Faces } from "@/components/sections/Faces";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Kissflow } from "@/components/sections/Kissflow";
 import { EOIForm } from "@/components/sections/EOIForm";
@@ -29,7 +28,10 @@ export default function HomePage() {
       <WhyHoustonBand />
       <PublishedWork />
       <Together />
-      <Faces />
+      {/* <Faces /> — hidden until real headshots land. Shows 4 named
+          executives against rotating stock photos, same reason the
+          AdvisoryMarquee roster is in its holding state. Restore alongside
+          SHOW_ROSTER in AdvisoryMarquee.tsx. */}
       <HowItWorks />
       <Kissflow />
       <EOIForm />

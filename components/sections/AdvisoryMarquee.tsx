@@ -8,10 +8,15 @@ import styles from "./AdvisoryMarquee.module.css";
 
 /**
  * §2 ADVISORY COUNCIL — mapped onto Nixtio's mentor marquee.
- * Two rows of portrait cards drifting in opposite directions (pattern D).
- * The map-morph stage is intentionally simplified out (executive tone);
- * instead a "Founding Chapter: Houston → geographies" stat sits above.
+ *
+ * TEMPORARILY IN A HOLDING STATE. The portrait marquee is hidden because the
+ * member records currently point at rotating stock photos (mentor-1..9.jpg)
+ * across 15 real, named executives. Flip SHOW_ROSTER back to true once real
+ * headshots land (or once the initials-only treatment is confirmed) — the
+ * marquee markup below is preserved and needs no other change.
  */
+const SHOW_ROSTER = false;
+
 export function AdvisoryMarquee() {
   return (
     <section id="members" className={styles.section}>
@@ -26,7 +31,9 @@ export function AdvisoryMarquee() {
             stagger={0.09}
             className={styles.title}
           >
-            The founding members who lend their name to the institution.
+            {SHOW_ROSTER
+              ? "The founding members who lend their name to the institution."
+              : "Founding members, announced soon."}
           </RevealText>
         </div>
         <FadeUp as="p" className={`muted ${styles.sub}`} start="top 88%">
@@ -35,25 +42,33 @@ export function AdvisoryMarquee() {
         </FadeUp>
       </div>
 
-      <div className={styles.rows}>
-        <Marquee speed={38} direction={1} className={styles.row}>
-          {MEMBERS.map((m) => (
-            <PortraitCard key={m.id} member={m} />
-          ))}
-        </Marquee>
-      </div>
-
-      <div className={`wrap ${styles.footer}`}>
-        <FadeUp as="p" className={styles.geo} start="top 88%">
-          Founding Chapter: <strong>Houston</strong>. The replicable model for{" "}
-          <strong>Permian Basin, Calgary, Abu Dhabi, and Singapore</strong>.
-        </FadeUp>
-        <FadeUp>
-          <Button href="/members" variant="ghost" arrow>
-            See the full council
-          </Button>
-        </FadeUp>
-      </div>
+      {SHOW_ROSTER ? (
+        <>
+          <div className={styles.rows}>
+            <Marquee speed={38} direction={1} className={styles.row}>
+              {MEMBERS.map((m) => (
+                <PortraitCard key={m.id} member={m} />
+              ))}
+            </Marquee>
+          </div>
+          <div className={`wrap ${styles.footer}`}>
+            <FadeUp>
+              <Button href="/members" variant="ghost" arrow>
+                See the full council
+              </Button>
+            </FadeUp>
+          </div>
+        </>
+      ) : (
+        <div className="wrap">
+          <FadeUp className={styles.holding} start="top 88%">
+            <span className={styles.holdingTag}>Coming soon</span>
+            <p className={styles.holdingText}>
+              The founding Advisory Council will be published here shortly.
+            </p>
+          </FadeUp>
+        </div>
+      )}
     </section>
   );
 }
