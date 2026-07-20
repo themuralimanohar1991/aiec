@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { NAV_LINKS } from "./ScrollHeader";
 import styles from "./MobileNav.module.css";
 
@@ -19,17 +20,17 @@ export function MobileNav({ open, onNav, onClose }: MobileNavProps) {
       />
       <nav className={`${styles.panel} ${open ? styles.panelOpen : ""}`}>
         {NAV_LINKS.map((l) => (
-          <a key={l.href} href={l.href} onClick={(e) => onNav(e, l.href)}>
+          <Link key={l.href} href={l.href} onClick={(e) => onNav(e, l.href)}>
             {l.label}
-          </a>
+          </Link>
         ))}
-        <a
-          href="#contact"
+        <Link
+          href="/contact"
           className={styles.cta}
-          onClick={(e) => onNav(e, "#contact")}
+          onClick={(e) => onNav(e, "/contact")}
         >
           Express Interest →
-        </a>
+        </Link>
       </nav>
     </>
   );

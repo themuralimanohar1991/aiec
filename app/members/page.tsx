@@ -2,7 +2,9 @@ import { MemberCard } from "@/components/ui/MemberCard";
 import { MEMBERS } from "@/lib/members";
 
 export const metadata = {
-  title: "The Council | AI Energy Council",
+  title: "The Council",
+  description:
+    "The AiEC Advisory Council: founding members from Houston's largest energy operators who lend their name, credibility, and peer network to the institution. Membership is by invitation only.",
 };
 
 /**

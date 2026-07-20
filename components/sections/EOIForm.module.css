@@ -38,7 +38,8 @@
   color: var(--blue-deep);
 }
 .field input,
-.field select {
+.field select,
+.field textarea {
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: 10px;
@@ -47,8 +48,13 @@
   font-size: 15px;
   color: var(--ink);
 }
+.field textarea {
+  resize: vertical;
+  min-height: 96px;
+}
 .field input:focus,
-.field select:focus {
+.field select:focus,
+.field textarea:focus {
   outline: none;
   border-color: var(--blue);
 }

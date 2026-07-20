@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, type ElementType, type ReactNode } from "react";
+import { useRef, type CSSProperties, type ElementType, type ReactNode } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import { EASE } from "@/lib/easings";
 import { MOTION } from "@/lib/motion-config";
@@ -11,6 +11,7 @@ type FadeUpProps = {
   children: ReactNode;
   as?: ElementType;
   className?: string;
+  style?: CSSProperties;
   /** travel distance in px (default 16) */
   y?: number;
   duration?: number;
@@ -30,6 +31,7 @@ export function FadeUp({
   children,
   as: Tag = "div",
   className,
+  style,
   y = MOTION.y,
   duration = 0.6,
   delay = 0,
@@ -66,7 +68,7 @@ export function FadeUp({
   }, [reduced, y, duration, delay, ease, start, onLoad]);
 
   return (
-    <Tag ref={ref} className={className}>
+    <Tag ref={ref} className={className} style={style}>
       {children}
     </Tag>
   );

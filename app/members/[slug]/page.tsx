@@ -7,6 +7,21 @@ export function generateStaticParams() {
   return MEMBERS.map((m) => ({ slug: m.id }));
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const member = MEMBERS.find((m) => m.id === slug);
+  if (!member) return { title: "Member not found" };
+
+  return {
+    title: `${member.name} - Founding Member`,
+    description: `${member.name}, ${member.title} at ${member.company}. Founding Member, AI Energy Council, Houston Chapter.`,
+  };
+}
+
 /**
  * PHASE 2 STUB — individual member profile in the "reserved" state, matching
  * the client mockup. The email-OTP claim + self-edit flow lands in a later

@@ -43,7 +43,7 @@ export function Hero() {
           </FadeUp>
 
           <FadeUp className={styles.actions} onLoad delay={0.7}>
-            <Button href="#contact" variant="primary" arrow>
+            <Button href="/contact" variant="primary" arrow>
               Express Interest
             </Button>
           </FadeUp>

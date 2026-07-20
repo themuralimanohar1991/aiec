@@ -1,0 +1,20 @@
+/* Inner-page header. Clears the fixed site header, then sets the page title. */
+.header {
+  padding-top: clamp(118px, 13vw, 168px);
+  padding-bottom: clamp(8px, 1.5vw, 20px);
+  background: var(--white);
+}
+
+.eyebrow {
+  margin-bottom: 6px;
+}
+
+.title {
+  font-size: clamp(2.3rem, 4.8vw, 3.9rem);
+  margin: 14px 0 22px;
+  max-width: 20ch;
+}
+
+.lead {
+  max-width: 68ch;
+}

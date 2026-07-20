@@ -36,7 +36,7 @@ export function WhyHoustonBand() {
           strategy?&rdquo; The AiEC is where they answer it together.
         </FadeUp>
         <FadeUp className={styles.cta}>
-          <Button href="#contact" variant="cyan" arrow>
+          <Button href="/contact" variant="cyan" arrow>
             Express Interest
           </Button>
         </FadeUp>

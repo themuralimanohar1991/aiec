@@ -1,0 +1,209 @@
+/* Shared content patterns for inner pages (About / Tracks / Publications /
+   Summit / Contact). Keeps the editorial rhythm consistent across routes. */
+
+.section {
+  background: var(--white);
+}
+
+.sectionTint {
+  background: var(--mist);
+}
+
+/* Stacked, rule-separated content blocks */
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.blk {
+  padding: clamp(30px, 3.6vw, 52px) 0;
+  border-top: 1px solid var(--line);
+}
+
+.blk:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.blk h2 {
+  margin: 14px 0 18px;
+}
+
+.blk h3 {
+  margin: 12px 0 14px;
+  font-size: clamp(1.3rem, 2.1vw, 1.7rem);
+}
+
+.blk p {
+  margin-bottom: 16px;
+}
+
+.blk p:last-child {
+  margin-bottom: 0;
+}
+
+/* Two-column content split */
+.cols2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(26px, 3.4vw, 48px);
+  margin-top: 20px;
+}
+
+@media (max-width: 860px) {
+  .cols2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.colHead {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--blue-deep);
+  margin-bottom: 6px;
+}
+
+/* Pull-quote / value-proposition sentence */
+.valueProp {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  line-height: 1.4;
+  color: var(--blue-deep);
+  border-left: 3px solid var(--cyan);
+  padding-left: 20px;
+  margin-top: 6px;
+}
+
+/* Quarterly-output / footnote line under a block */
+.output {
+  margin-top: 22px;
+  font-size: 15px;
+}
+
+/* Callout card (Kissflow acknowledgment, cross-functional note) */
+.callout {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--blue);
+  border-radius: 14px;
+  padding: clamp(26px, 3vw, 40px);
+}
+
+.calloutTint {
+  background: var(--mist);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--cyan);
+  border-radius: 14px;
+  padding: clamp(24px, 2.6vw, 34px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.ptxt {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  color: var(--blue-deep);
+  max-width: 40ch;
+}
+
+/* Meta cells (Summit format grid) */
+.cells {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.cell {
+  padding: 22px 40px 20px 0;
+  margin-right: 40px;
+}
+
+.cell .k {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.cell .v {
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  color: var(--blue-deep);
+}
+
+.ctaRow {
+  margin-top: 32px;
+}
+
+/* ---- Report list (Publications) ---- */
+.reports {
+  border-top: 1px solid var(--line);
+}
+
+.report {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 12px 24px;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+
+.reportIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--mist);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.report h3 {
+  margin-bottom: 8px;
+  font-size: clamp(1.2rem, 1.9vw, 1.5rem);
+}
+
+.report p {
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+.reportMeta {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.soon {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--cyan-deep, #0E7490);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 680px) {
+  .report {
+    grid-template-columns: 48px 1fr;
+  }
+  .reportMeta {
+    grid-column: 2;
+    order: -1;
+  }
+}

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./Footer.module.css";
 
 export function Footer() {
@@ -13,17 +14,16 @@ export function Footer() {
           </div>
           <div className={styles.col}>
             <h4>Institution</h4>
-            <a href="#about">About</a>
-            <a href="#tracks">Tracks</a>
-            <a href="#members">Members</a>
-            <a href="#powered">Powered by Kissflow</a>
+            <Link href="/about">About</Link>
+            <Link href="/tracks">Tracks</Link>
+            <Link href="/members">Members</Link>
           </div>
           <div className={styles.col}>
             <h4>Engage</h4>
-            <a href="#publications">Publications</a>
-            <a href="#summit">Summit</a>
-            <a href="#contact">Express Interest</a>
-            <a href="#contact">Contact</a>
+            <Link href="/publications">Publications</Link>
+            <Link href="/summit">Summit</Link>
+            <Link href="/contact">Express Interest</Link>
+            <Link href="/contact#claim">Claim your profile</Link>
           </div>
         </div>
         <div className={styles.bar}>

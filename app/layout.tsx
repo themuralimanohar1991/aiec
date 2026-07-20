@@ -26,11 +26,28 @@ const plexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
+/**
+ * Canonical origin for absolute URLs (OG tags, canonicals). Set
+ * NEXT_PUBLIC_SITE_URL in Vercel when the site moves to its real domain.
+ */
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://aienergycouncil.vercel.app";
+
 export const metadata: Metadata = {
-  title: "AI Energy Council",
+  // Inner pages set `title` and it renders as "About | AI Energy Council";
+  // the home page uses `default`.
+  title: {
+    default: "AI Energy Council",
+    template: "%s | AI Energy Council",
+  },
   description:
     "Houston's first peer-governed executive community for AI in energy operations. Invitation-only, closed-door, Chatham House rules. Powered by Kissflow.",
-  metadataBase: new URL("https://aienergycouncil.com"),
+  metadataBase: new URL(SITE_URL),
+  openGraph: {
+    siteName: "AI Energy Council",
+    type: "website",
+    locale: "en_US",
+  },
 };
 
 export const viewport: Viewport = {

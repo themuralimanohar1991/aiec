@@ -2,6 +2,8 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import { scrollToTarget } from "@/lib/lenis";
 import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect";
@@ -10,12 +12,12 @@ import { MobileNav } from "./MobileNav";
 import styles from "./ScrollHeader.module.css";
 
 export const NAV_LINKS = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#tracks", label: "Tracks" },
-  { href: "#members", label: "Members" },
-  { href: "#publications", label: "Publications" },
-  { href: "#summit", label: "Summit" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/tracks", label: "Tracks" },
+  { href: "/members", label: "Members" },
+  { href: "/publications", label: "Publications" },
+  { href: "/summit", label: "Summit" },
 ];
 
 /**
@@ -27,6 +29,7 @@ export function ScrollHeader() {
   const headerRef = useRef<HTMLElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const reduced = useReducedMotion();
+  const pathname = usePathname();
 
   useIsomorphicLayoutEffect(() => {
     const header = headerRef.current;
@@ -88,21 +91,25 @@ export function ScrollHeader() {
     return () => ctx.revert();
   }, [reduced]);
 
+  // In-page anchors still route through Lenis; real routes navigate normally
+  // and just close the mobile panel.
   const handleNav = (e: React.MouseEvent, href: string) => {
     if (href.startsWith("#")) {
       e.preventDefault();
       scrollToTarget(href, { offset: -80 });
-      setMenuOpen(false);
     }
+    setMenuOpen(false);
   };
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <header ref={headerRef} className={styles.header}>
       <div className={`wrap ${styles.nav}`}>
-        <a
-          href="#home"
+        <Link
+          href="/"
           className={styles.brand}
-          onClick={(e) => handleNav(e, "#home")}
           aria-label="AI Energy Council - home"
         >
           <Image
@@ -113,21 +120,22 @@ export function ScrollHeader() {
             priority
             className={styles.logo}
           />
-        </a>
+        </Link>
 
         <nav className={styles.links}>
           {NAV_LINKS.map((l) => (
-            <a key={l.href} href={l.href} onClick={(e) => handleNav(e, l.href)}>
+            <Link
+              key={l.href}
+              href={l.href}
+              aria-current={isActive(l.href) ? "page" : undefined}
+              className={isActive(l.href) ? styles.active : undefined}
+            >
               {l.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#contact"
-            className={styles.cta}
-            onClick={(e) => handleNav(e, "#contact")}
-          >
+          <Link href="/contact" className={styles.cta}>
             Express Interest
-          </a>
+          </Link>
         </nav>
 
         <button
